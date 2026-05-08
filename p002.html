@@ -97,7 +97,7 @@
 
       /* Dropdown */
       .navbar__dropdown {
-        position: relative;
+        position: static;
       }
 
       .navbar__dropdown-trigger {
@@ -134,40 +134,115 @@
       .navbar__dropdown-menu {
         position: absolute;
         top: 100%;
-        left: -12px;
+        left: 0;
+        width: 100%;
         background: var(--color-white);
-        border: 1px solid rgba(10, 10, 10, 0.08);
-        border-radius: 8px;
-        padding: 8px 0;
-        min-width: 160px;
+        border-top: 1px solid rgba(10, 10, 10, 0.08);
+        padding: 32px 40px;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(8px);
-        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        box-shadow: 0 12px 32px rgba(10, 10, 10, 0.06);
+        display: flex;
+        gap: 40px;
       }
 
       .navbar__dropdown:hover .navbar__dropdown-menu {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
       }
 
-      .navbar__dropdown-item {
-        display: block;
+      /* Build names list on the left */
+      .navbar__dropdown-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 4px;
+        min-width: 100px;
+      }
+
+      .navbar__dropdown-list-item {
         font-family: var(--font-heading);
         font-size: 0.7rem;
         font-weight: 400;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(10, 10, 10, 0.5);
-        padding: 8px 20px;
-        transition: color 0.2s ease, background 0.2s ease;
+        color: rgba(10, 10, 10, 0.35);
+        cursor: pointer;
+        transition: color 0.2s ease;
+        padding: 4px 0;
       }
 
-      .navbar__dropdown-item:hover {
+      .navbar__dropdown-list-item:hover,
+      .navbar__dropdown-list-item.active {
+        color: var(--color-black);
+      }
+
+      /* Build cards with images */
+      .navbar__dropdown-cards {
+        display: flex;
+        gap: 32px;
+        flex: 1;
+      }
+
+      .navbar__dropdown-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 260px;
+      }
+
+      .navbar__dropdown-card-img {
+        width: 260px;
+        height: 160px;
+        background: #eae6e1;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+      }
+
+      .navbar__dropdown-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .navbar__dropdown-card:hover .navbar__dropdown-card-img {
+        opacity: 0.85;
+      }
+
+      .navbar__dropdown-card-name {
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-black);
+      }
+
+      .navbar__dropdown-card-link {
+        font-family: var(--font-heading);
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         color: var(--color-red);
-        background: rgba(10, 10, 10, 0.03);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.3s ease;
+      }
+
+      .navbar__dropdown-card:hover .navbar__dropdown-card-link {
+        gap: 10px;
+      }
+
+      .navbar__dropdown-card-link svg {
+        width: 12px;
+        height: 12px;
       }
 
       /* Right side icons */
@@ -678,8 +753,32 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="navbar__dropdown-menu">
-            <a href="p001.html" class="navbar__dropdown-item">P001 — 993 RS</a>
-            <a href="p002.html" class="navbar__dropdown-item">P002 — 901 R</a>
+            <div class="navbar__dropdown-list">
+              <a href="p001.html" class="navbar__dropdown-list-item">P001</a>
+              <a href="p002.html" class="navbar__dropdown-list-item active">P002</a>
+            </div>
+            <div class="navbar__dropdown-cards">
+              <a href="p001.html" class="navbar__dropdown-card">
+                <div class="navbar__dropdown-card-img">
+                  <img src="assets/993RS.png" alt="993 RS">
+                </div>
+                <span class="navbar__dropdown-card-name">P001 — 993 RS</span>
+                <span class="navbar__dropdown-card-link">
+                  See More
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </a>
+              <a href="p002.html" class="navbar__dropdown-card">
+                <div class="navbar__dropdown-card-img">
+                  <img src="assets/901Wasabi.png" alt="901 R">
+                </div>
+                <span class="navbar__dropdown-card-name">P002 — 901 R</span>
+                <span class="navbar__dropdown-card-link">
+                  See More
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </a>
+            </div>
           </div>
         </li>
         <li><a href="store.html" class="navbar__link">Store</a></li>
