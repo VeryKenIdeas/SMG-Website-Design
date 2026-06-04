@@ -6,26 +6,83 @@
     <title>Store | SMG Werks</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3cond.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3condital.ttf")
+          format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+
       :root {
         --color-cotton: #f5f0eb;
         --color-red: #e30613;
         --color-maroon: #5c1a1b;
         --color-black: #0a0a0a;
         --color-white: #ffffff;
-        --font-heading: "Space Grotesk", sans-serif;
+        --font-heading: "911 Porscha", "Space Grotesk", sans-serif;
         --font-body: "Inter", sans-serif;
         --nav-height: 72px;
         --border-radius: 12px;
       }
 
-      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { font-family: var(--font-body); background-color: var(--color-white); color: var(--color-black); line-height: 1.6; overflow-x: hidden; }
-      img { max-width: 100%; display: block; }
-      a { text-decoration: none; color: inherit; }
-      h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-body);
+        background-color: var(--color-white);
+        color: var(--color-black);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
 
       /* ========== NAVBAR ========== */
       .navbar {
@@ -39,8 +96,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 40px;
-        background: var(--color-white);
-        border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+        background: var(--color-black);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .navbar__logo img {
@@ -63,7 +120,7 @@
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         padding: 8px 0;
       }
@@ -87,7 +144,7 @@
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         padding: 8px 0;
         cursor: pointer;
@@ -117,13 +174,15 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--color-white);
-        border-top: 1px solid rgba(10, 10, 10, 0.08);
+        background: var(--color-black);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         padding: 32px 40px;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        box-shadow: 0 12px 32px rgba(10, 10, 10, 0.06);
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         display: flex;
         gap: 40px;
       }
@@ -148,7 +207,7 @@
         font-weight: 400;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(10, 10, 10, 0.35);
+        color: rgba(255, 255, 255, 0.35);
         cursor: pointer;
         transition: color 0.2s ease;
         padding: 4px 0;
@@ -156,14 +215,14 @@
 
       .navbar__dropdown-list-item:hover,
       .navbar__dropdown-list-item.active {
-        color: var(--color-black);
+        color: var(--color-white);
       }
 
       /* Build cards with images */
       .navbar__dropdown-cards {
         display: flex;
         gap: 32px;
-        flex: 1;
+        margin-left: auto;
       }
 
       .navbar__dropdown-card {
@@ -176,7 +235,7 @@
       .navbar__dropdown-card-img {
         width: 260px;
         height: 160px;
-        background: #eae6e1;
+        background: #1a1a1a;
         border-radius: 8px;
         overflow: hidden;
         display: flex;
@@ -201,7 +260,7 @@
         font-weight: 500;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
       }
 
       .navbar__dropdown-card-link {
@@ -234,7 +293,7 @@
       }
 
       .navbar__icon {
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         display: flex;
         align-items: center;
@@ -263,13 +322,21 @@
         display: block;
         width: 100%;
         height: 2px;
-        background: var(--color-black);
-        transition: transform 0.4s ease, opacity 0.3s ease;
+        background: var(--color-white);
+        transition:
+          transform 0.4s ease,
+          opacity 0.3s ease;
       }
 
-      .navbar__hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .navbar__hamburger.active span:nth-child(2) { opacity: 0; }
-      .navbar__hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      .navbar__hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .navbar__hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar__hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
 
       /* Mobile menu */
       .mobile-menu {
@@ -335,16 +402,27 @@
         background: var(--color-black);
       }
       .store-hero__breadcrumb {
-        font-family: var(--font-body); font-size: 0.75rem;
-        letter-spacing: 0.15em; text-transform: uppercase;
-        color: rgba(255,255,255,0.4); margin-bottom: 24px;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 24px;
       }
-      .store-hero__breadcrumb a { transition: color 0.3s ease; }
-      .store-hero__breadcrumb a:hover { color: var(--color-red); }
-      .store-hero__breadcrumb span { color: rgba(255,255,255,0.2); margin: 0 8px; }
+      .store-hero__breadcrumb a {
+        transition: color 0.3s ease;
+      }
+      .store-hero__breadcrumb a:hover {
+        color: var(--color-red);
+      }
+      .store-hero__breadcrumb span {
+        color: rgba(255, 255, 255, 0.2);
+        margin: 0 8px;
+      }
       .store-hero__title {
         font-size: clamp(3rem, 7vw, 5.5rem);
-        color: var(--color-white); letter-spacing: 0.04em;
+        color: var(--color-white);
+        letter-spacing: 0.04em;
       }
 
       /* ========== PRODUCT GRID ========== */
@@ -367,54 +445,82 @@
         border-radius: var(--border-radius);
         overflow: hidden;
         background: var(--color-white);
-        border: 1px solid rgba(10,10,10,0.08);
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        border: 1px solid rgba(10, 10, 10, 0.08);
+        transition:
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
         cursor: pointer;
       }
       .product-card:hover {
-        box-shadow: 0 12px 40px rgba(10,10,10,0.08);
+        box-shadow: 0 12px 40px rgba(10, 10, 10, 0.08);
         transform: translateY(-4px);
       }
       .product-card__image {
         aspect-ratio: 1;
         background: #eae6e1;
-        display: flex; align-items: center; justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
       }
       .product-card__image span {
-        font-family: var(--font-heading); font-size: 0.75rem;
-        letter-spacing: 0.15em; text-transform: uppercase;
-        color: rgba(10,10,10,0.2);
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(10, 10, 10, 0.2);
       }
       .product-card__body {
         padding: 24px;
-        display: flex; flex-direction: column; gap: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         flex: 1;
       }
       .product-card__tag {
-        font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
-        letter-spacing: 0.15em; text-transform: uppercase;
-        color: var(--color-white); background: var(--color-red);
-        padding: 4px 10px; border-radius: 4px; align-self: flex-start;
+        font-family: var(--font-heading);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        background: var(--color-red);
+        padding: 4px 10px;
+        border-radius: 4px;
+        align-self: flex-start;
       }
       .product-card__name {
-        font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
-        letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-black);
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-black);
         line-height: 1.3;
       }
       .product-card__desc {
-        font-size: 0.85rem; color: rgba(10,10,10,0.5); line-height: 1.6;
+        font-size: 0.85rem;
+        color: rgba(10, 10, 10, 0.5);
+        line-height: 1.6;
       }
       .product-card__pricing {
-        display: flex; align-items: baseline; gap: 12px; margin-top: auto; padding-top: 8px;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 8px;
       }
       .product-card__price {
-        font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600;
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 600;
         color: var(--color-black);
       }
       .product-card__original-price {
-        font-family: var(--font-body); font-size: 0.85rem;
-        color: rgba(10,10,10,0.35); text-decoration: line-through;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: rgba(10, 10, 10, 0.35);
+        text-decoration: line-through;
       }
 
       /* ========== PRODUCT DETAIL (single product view) ========== */
@@ -436,25 +542,41 @@
         aspect-ratio: 4 / 3;
         background: #eae6e1;
         border-radius: var(--border-radius);
-        display: flex; align-items: center; justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .product-detail__main-image span {
-        font-family: var(--font-heading); font-size: 0.85rem;
-        letter-spacing: 0.15em; text-transform: uppercase; color: rgba(10,10,10,0.2);
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(10, 10, 10, 0.2);
       }
       .product-detail__thumbs {
-        display: flex; gap: 8px;
+        display: flex;
+        gap: 8px;
       }
       .product-detail__thumb {
-        flex: 1; aspect-ratio: 1;
-        background: #eae6e1; border-radius: 8px;
-        display: flex; align-items: center; justify-content: center;
-        cursor: pointer; transition: opacity 0.3s ease;
+        flex: 1;
+        aspect-ratio: 1;
+        background: #eae6e1;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
       }
-      .product-detail__thumb:hover { opacity: 0.7; }
+      .product-detail__thumb:hover {
+        opacity: 0.7;
+      }
       .product-detail__thumb span {
-        font-family: var(--font-heading); font-size: 0.55rem;
-        letter-spacing: 0.1em; text-transform: uppercase; color: rgba(10,10,10,0.2);
+        font-family: var(--font-heading);
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(10, 10, 10, 0.2);
       }
 
       .product-detail__info {
@@ -464,109 +586,326 @@
         justify-content: center;
       }
       .product-detail__tag {
-        font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
-        letter-spacing: 0.15em; text-transform: uppercase;
-        color: var(--color-white); background: var(--color-red);
-        padding: 4px 10px; border-radius: 4px; align-self: flex-start;
+        font-family: var(--font-heading);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        background: var(--color-red);
+        padding: 4px 10px;
+        border-radius: 4px;
+        align-self: flex-start;
         margin-bottom: 16px;
       }
       .product-detail__name {
         font-size: clamp(1.5rem, 3vw, 2.2rem);
-        color: var(--color-black); margin-bottom: 16px;
+        color: var(--color-black);
+        margin-bottom: 16px;
       }
       .product-detail__subtitle {
-        font-family: var(--font-body); font-size: 0.9rem; font-style: italic;
-        color: rgba(10,10,10,0.45); margin-bottom: 24px;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-style: italic;
+        color: rgba(10, 10, 10, 0.45);
+        margin-bottom: 24px;
       }
       .product-detail__pricing {
-        display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 24px;
       }
       .product-detail__price {
-        font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
         color: var(--color-black);
       }
       .product-detail__original-price {
-        font-family: var(--font-body); font-size: 1rem;
-        color: rgba(10,10,10,0.35); text-decoration: line-through;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: rgba(10, 10, 10, 0.35);
+        text-decoration: line-through;
       }
       .product-detail__desc {
-        font-size: 0.95rem; line-height: 1.8;
-        color: rgba(10,10,10,0.6); margin-bottom: 12px;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(10, 10, 10, 0.6);
+        margin-bottom: 12px;
       }
       .product-detail__features {
-        list-style: none; padding: 0; margin-bottom: 32px;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 32px;
       }
       .product-detail__features li {
-        font-size: 0.9rem; color: rgba(10,10,10,0.6);
-        padding: 6px 0; padding-left: 16px; position: relative;
+        font-size: 0.9rem;
+        color: rgba(10, 10, 10, 0.6);
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
       }
       .product-detail__features li::before {
-        content: ""; position: absolute; left: 0; top: 50%;
-        width: 6px; height: 6px; border-radius: 50%;
-        background: var(--color-red); transform: translateY(-50%);
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-red);
+        transform: translateY(-50%);
       }
       .product-detail__add-to-cart {
-        font-family: var(--font-heading); font-size: 0.85rem; font-weight: 500;
-        letter-spacing: 0.15em; text-transform: uppercase;
-        color: var(--color-white); background: var(--color-black);
-        border: none; border-radius: 8px; padding: 16px 40px;
-        cursor: pointer; align-self: flex-start;
-        transition: background 0.3s ease, transform 0.3s ease;
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        background: var(--color-black);
+        border: none;
+        border-radius: 8px;
+        padding: 16px 40px;
+        cursor: pointer;
+        align-self: flex-start;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
       }
       .product-detail__add-to-cart:hover {
-        background: var(--color-red); transform: translateY(-2px);
+        background: var(--color-red);
+        transform: translateY(-2px);
       }
 
       /* ========== FOOTER ========== */
       .footer {
-        min-height: 100vh; background: var(--color-cotton); color: var(--color-black);
-        display: flex; flex-direction: column; justify-content: space-between; padding: 60px 60px 40px;
+        min-height: 100vh;
+        background: var(--color-cotton);
+        color: var(--color-black);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 60px 60px 40px;
       }
-      .footer__top { display: flex; gap: 60px; padding-bottom: 60px; }
-      .footer__top-left { flex: 1; }
-      .footer__logo-large { margin-bottom: 32px; }
-      .footer__logo-large img { height: clamp(40px, 6vw, 60px); width: auto; }
-      .footer__headline { font-family: var(--font-heading); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; color: var(--color-black); margin-bottom: 24px; }
-      .footer__tagline { font-family: var(--font-body); font-size: 0.8rem; font-style: italic; color: rgba(10,10,10,0.35); margin-bottom: 16px; }
-      .footer__desc { font-size: 0.95rem; line-height: 1.7; color: rgba(10,10,10,0.45); max-width: 420px; }
-      .footer__top-right { flex: 1; display: flex; align-items: center; max-width: 480px; }
-      .footer__form { width: 100%; display: flex; flex-direction: column; gap: 16px; }
-      .footer__form-row { display: flex; gap: 12px; }
-      .footer__form-row > * { flex: 1; }
-      .footer__form-group { display: flex; flex-direction: column; gap: 6px; }
-      .footer__form-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.35); }
-      .footer__form-input, .footer__form-textarea { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-black); background: transparent; border: 1px solid rgba(10,10,10,0.15); border-radius: 8px; padding: 12px 14px; outline: none; transition: border-color 0.3s ease, background 0.3s ease; }
-      .footer__form-input::placeholder, .footer__form-textarea::placeholder { color: rgba(10,10,10,0.25); }
-      .footer__form-input:focus, .footer__form-textarea:focus { border-color: var(--color-red); background: rgba(255,255,255,0.5); }
-      .footer__form-textarea { resize: vertical; min-height: 100px; }
-      .footer__form-submit { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-white); background: var(--color-black); border: none; border-radius: 8px; padding: 14px 32px; cursor: pointer; transition: background 0.3s ease, transform 0.3s ease; align-self: flex-start; margin-top: 4px; }
-      .footer__form-submit:hover { background: var(--color-red); transform: translateY(-2px); }
-      .footer__nav { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 24px; border-top: 1px solid rgba(10,10,10,0.12); flex-wrap: wrap; gap: 32px; }
-      .footer__nav-col { display: flex; flex-direction: column; gap: 8px; }
-      .footer__nav-col--meta { font-family: var(--font-body); font-size: 0.8rem; color: rgba(10,10,10,0.35); line-height: 1.6; }
-      .footer__nav-title { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.35); margin-bottom: 4px; }
-      .footer__nav-col a { font-size: 0.85rem; color: rgba(10,10,10,0.6); transition: color 0.3s ease; line-height: 1.8; }
-      .footer__nav-col a:hover { color: var(--color-red); }
-      .footer__disclaimer-row { display: flex; justify-content: space-between; align-items: baseline; padding-top: 32px; gap: 24px; }
-      .footer__disclaimer { font-size: 0.7rem; color: rgba(10,10,10,0.2); max-width: 600px; line-height: 1.6; }
-      .footer__credit { font-size: 0.7rem; color: rgba(10,10,10,0.3); white-space: nowrap; }
-      .footer__credit a { color: rgba(10,10,10,0.45); transition: color 0.3s ease; }
-      .footer__credit a:hover { color: var(--color-red); }
+      .footer__top {
+        display: flex;
+        gap: 60px;
+        padding-bottom: 60px;
+      }
+      .footer__top-left {
+        flex: 1;
+      }
+      .footer__logo-large {
+        margin-bottom: 32px;
+      }
+      .footer__logo-large img {
+        height: clamp(40px, 6vw, 60px);
+        width: auto;
+      }
+      .footer__headline {
+        font-family: var(--font-heading);
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        color: var(--color-black);
+        margin-bottom: 24px;
+      }
+      .footer__tagline {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-style: italic;
+        color: rgba(10, 10, 10, 0.35);
+        margin-bottom: 16px;
+      }
+      .footer__desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(10, 10, 10, 0.45);
+        max-width: 420px;
+      }
+      .footer__top-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        max-width: 480px;
+      }
+      .footer__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer__form-row {
+        display: flex;
+        gap: 12px;
+      }
+      .footer__form-row > * {
+        flex: 1;
+      }
+      .footer__form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .footer__form-label {
+        font-family: var(--font-heading);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(10, 10, 10, 0.35);
+      }
+      .footer__form-input,
+      .footer__form-textarea {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--color-black);
+        background: transparent;
+        border: 1px solid rgba(10, 10, 10, 0.15);
+        border-radius: 8px;
+        padding: 12px 14px;
+        outline: none;
+        transition:
+          border-color 0.3s ease,
+          background 0.3s ease;
+      }
+      .footer__form-input::placeholder,
+      .footer__form-textarea::placeholder {
+        color: rgba(10, 10, 10, 0.25);
+      }
+      .footer__form-input:focus,
+      .footer__form-textarea:focus {
+        border-color: var(--color-red);
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .footer__form-textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .footer__form-submit {
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        background: var(--color-black);
+        border: none;
+        border-radius: 8px;
+        padding: 14px 32px;
+        cursor: pointer;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
+        align-self: flex-start;
+        margin-top: 4px;
+      }
+      .footer__form-submit:hover {
+        background: var(--color-red);
+        transform: translateY(-2px);
+      }
+      .footer__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 24px;
+        border-top: 1px solid rgba(10, 10, 10, 0.12);
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      .footer__nav-col {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer__nav-col--meta {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        color: rgba(10, 10, 10, 0.35);
+        line-height: 1.6;
+      }
+      .footer__nav-title {
+        font-family: var(--font-heading);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(10, 10, 10, 0.35);
+        margin-bottom: 4px;
+      }
+      .footer__nav-col a {
+        font-size: 0.85rem;
+        color: rgba(10, 10, 10, 0.6);
+        transition: color 0.3s ease;
+        line-height: 1.8;
+      }
+      .footer__nav-col a:hover {
+        color: var(--color-red);
+      }
+      .footer__disclaimer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: 32px;
+        gap: 24px;
+      }
+      .footer__disclaimer {
+        font-size: 0.7rem;
+        color: rgba(10, 10, 10, 0.2);
+        max-width: 600px;
+        line-height: 1.6;
+      }
+      .footer__credit {
+        font-size: 0.7rem;
+        color: rgba(10, 10, 10, 0.3);
+        white-space: nowrap;
+      }
+      .footer__credit a {
+        color: rgba(10, 10, 10, 0.45);
+        transition: color 0.3s ease;
+      }
+      .footer__credit a:hover {
+        color: var(--color-red);
+      }
 
       /* ========== SCROLL ANIMATIONS ========== */
-      .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       /* ========== RESPONSIVE ========== */
       @media (max-width: 1024px) {
-        .product-detail { flex-direction: column; gap: 40px; }
-        .footer__top { flex-direction: column; }
-        .footer__top-right { max-width: 100%; }
-        .footer__nav { gap: 28px; }
+        .product-detail {
+          flex-direction: column;
+          gap: 40px;
+        }
+        .footer__top {
+          flex-direction: column;
+        }
+        .footer__top-right {
+          max-width: 100%;
+        }
+        .footer__nav {
+          gap: 28px;
+        }
       }
 
       @media (max-width: 768px) {
-        .navbar { padding: 0 24px; }
+        .navbar {
+          padding: 0 24px;
+        }
 
         .navbar__links,
         .navbar__actions {
@@ -577,20 +916,40 @@
           display: flex;
         }
 
-        .store-hero { padding: 140px 24px 48px; }
-        .products { padding: 48px 24px; }
-        .products__grid { grid-template-columns: 1fr; }
-        .product-detail { padding: 48px 24px; }
-        .product-detail__thumbs { flex-wrap: wrap; }
-        .footer { padding: 40px 24px 24px; min-height: auto; }
-        .footer__headline { font-size: clamp(2rem, 8vw, 3rem); }
-        .footer__form-row { flex-direction: column; gap: 16px; }
-        .footer__nav { flex-direction: column; gap: 24px; }
+        .store-hero {
+          padding: 140px 24px 48px;
+        }
+        .products {
+          padding: 48px 24px;
+        }
+        .products__grid {
+          grid-template-columns: 1fr;
+        }
+        .product-detail {
+          padding: 48px 24px;
+        }
+        .product-detail__thumbs {
+          flex-wrap: wrap;
+        }
+        .footer {
+          padding: 40px 24px 24px;
+          min-height: auto;
+        }
+        .footer__headline {
+          font-size: clamp(2rem, 8vw, 3rem);
+        }
+        .footer__form-row {
+          flex-direction: column;
+          gap: 16px;
+        }
+        .footer__nav {
+          flex-direction: column;
+          gap: 24px;
+        }
       }
     </style>
   </head>
   <body>
-
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
       <a href="index.html" class="navbar__logo">
@@ -600,32 +959,61 @@
         <li class="navbar__dropdown">
           <button class="navbar__dropdown-trigger">
             Builds
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </button>
           <div class="navbar__dropdown-menu">
             <div class="navbar__dropdown-list">
-              <a href="p001.html" class="navbar__dropdown-list-item">P001</a>
-              <a href="p002.html" class="navbar__dropdown-list-item">P002</a>
+              <a href="p001.html" class="navbar__dropdown-list-item">P-001</a>
+              <a href="p002.html" class="navbar__dropdown-list-item">P-002</a>
             </div>
             <div class="navbar__dropdown-cards">
               <a href="p001.html" class="navbar__dropdown-card">
                 <div class="navbar__dropdown-card-img">
-                  <img src="assets/993RS.png" alt="993 RS">
+                  <img src="assets/993RS.png" alt="993 RS" />
                 </div>
-                <span class="navbar__dropdown-card-name">P001 — 993 RS</span>
+                <span class="navbar__dropdown-card-name">P-001 — 993 RS</span>
                 <span class="navbar__dropdown-card-link">
                   See More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </span>
               </a>
               <a href="p002.html" class="navbar__dropdown-card">
                 <div class="navbar__dropdown-card-img">
-                  <img src="assets/901Wasabi.png" alt="901 R">
+                  <img src="assets/901Wasabi.png" alt="901 R" />
                 </div>
-                <span class="navbar__dropdown-card-name">P002 — 901 R</span>
+                <span class="navbar__dropdown-card-name">P-002 — 901 R</span>
                 <span class="navbar__dropdown-card-link">
                   See More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </span>
               </a>
             </div>
@@ -636,7 +1024,18 @@
       </ul>
       <div class="navbar__actions">
         <a href="#" class="navbar__icon" aria-label="Cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
         </a>
       </div>
       <div class="navbar__hamburger" id="hamburger">
@@ -649,8 +1048,8 @@
       <a href="index.html" class="mobile-menu__link">Home</a>
       <a href="index.html#builds" class="mobile-menu__link">Builds</a>
       <div class="mobile-menu__sub">
-        <a href="p001.html">P001 — 993 RS</a>
-        <a href="p002.html">P002 — 901 R</a>
+        <a href="p001.html">P-001 — 993 RS</a>
+        <a href="p002.html">P-002 — 901 R</a>
       </div>
       <a href="store.html" class="mobile-menu__link active-link">Store</a>
       <a href="#footer" class="mobile-menu__link">Contact</a>
@@ -681,13 +1080,21 @@
       </div>
       <div class="product-detail__info">
         <span class="product-detail__tag">On Sale</span>
-        <h2 class="product-detail__name">SMG 993 Billet Aluminium Door Handle</h2>
-        <p class="product-detail__subtitle">Refined Minimalism. OEM+ Precision.</p>
+        <h2 class="product-detail__name">
+          SMG 993 Billet Aluminium Door Handle
+        </h2>
+        <p class="product-detail__subtitle">
+          Refined Minimalism. OEM+ Precision.
+        </p>
         <div class="product-detail__pricing">
           <span class="product-detail__price">$5,499.00</span>
           <span class="product-detail__original-price">$5,999.00</span>
         </div>
-        <p class="product-detail__desc">Precision-milled from a single billet aluminum block, featuring an opening for RS-style door pull. Designed for flush fitment on the door card using existing mounting points.</p>
+        <p class="product-detail__desc">
+          Precision-milled from a single billet aluminum block, featuring an
+          opening for RS-style door pull. Designed for flush fitment on the door
+          card using existing mounting points.
+        </p>
         <ul class="product-detail__features">
           <li>Precision-milled from single billet aluminum block</li>
           <li>RS-style door pull opening</li>
@@ -704,33 +1111,66 @@
         <div class="footer__top">
           <div class="footer__top-left">
             <div class="footer__logo-large">
-              <img src="assets/SMG-Logo.png" alt="SMG Werks">
+              <img src="assets/SMG-Logo.png" alt="SMG Werks" />
             </div>
             <p class="footer__tagline">Excellence since 1956</p>
-            <h2 class="footer__headline">Schedule a<br>Consultation.</h2>
-            <p class="footer__desc">Feel free to reach out to secure a build slot at SMG Werks. Tell us about your car and we'll get back to you.</p>
+            <h2 class="footer__headline">Schedule a<br />Consultation.</h2>
+            <p class="footer__desc">
+              Feel free to reach out to secure a build slot at SMG Werks. Tell
+              us about your car and we'll get back to you.
+            </p>
           </div>
           <div class="footer__top-right">
-            <form class="footer__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form
+              class="footer__form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
               <div class="footer__form-group">
                 <label class="footer__form-label" for="email">Email</label>
-                <input class="footer__form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+                <input
+                  class="footer__form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
               </div>
               <div class="footer__form-row">
                 <div class="footer__form-group">
                   <label class="footer__form-label" for="year">Year</label>
-                  <input class="footer__form-input" type="text" id="year" name="year" placeholder="1993">
+                  <input
+                    class="footer__form-input"
+                    type="text"
+                    id="year"
+                    name="year"
+                    placeholder="1993"
+                  />
                 </div>
                 <div class="footer__form-group">
                   <label class="footer__form-label" for="model">Model</label>
-                  <input class="footer__form-input" type="text" id="model" name="model" placeholder="993 Carrera">
+                  <input
+                    class="footer__form-input"
+                    type="text"
+                    id="model"
+                    name="model"
+                    placeholder="993 Carrera"
+                  />
                 </div>
               </div>
               <div class="footer__form-group">
                 <label class="footer__form-label" for="message">Message</label>
-                <textarea class="footer__form-textarea" id="message" name="message" placeholder="Tell us about your project..."></textarea>
+                <textarea
+                  class="footer__form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project..."
+                ></textarea>
               </div>
-              <button type="submit" class="footer__form-submit">Send Inquiry</button>
+              <button type="submit" class="footer__form-submit">
+                Send Inquiry
+              </button>
             </form>
           </div>
         </div>
@@ -754,8 +1194,18 @@
           </div>
           <div class="footer__nav-col">
             <p class="footer__nav-title">Social</p>
-            <a href="https://www.facebook.com/smgwerks/" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/smgwerks/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a
+              href="https://www.facebook.com/smgwerks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/smgwerks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
           </div>
           <div class="footer__nav-col">
             <p class="footer__nav-title">Contact</p>
@@ -769,8 +1219,20 @@
           </div>
         </div>
         <div class="footer__disclaimer-row">
-          <p class="footer__disclaimer">SMG Werks is not affiliated with, endorsed by, or sponsored by Dr. Ing. h.c. F. Porsche AG or any of its subsidiaries. Porsche is a registered trademark of Dr. Ing. h.c. F. Porsche AG.</p>
-          <p class="footer__credit">Designed by <a href="https://khoiqnguyen.com" target="_blank" rel="noopener noreferrer">Khoi Nguyen</a></p>
+          <p class="footer__disclaimer">
+            SMG Werks is not affiliated with, endorsed by, or sponsored by Dr.
+            Ing. h.c. F. Porsche AG or any of its subsidiaries. Porsche is a
+            registered trademark of Dr. Ing. h.c. F. Porsche AG.
+          </p>
+          <p class="footer__credit">
+            Designed by
+            <a
+              href="https://khoiqnguyen.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Khoi Nguyen</a
+            >
+          </p>
         </div>
       </div>
     </footer>
@@ -783,10 +1245,12 @@
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         mobileMenu.classList.toggle("active");
-        document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+        document.body.style.overflow = mobileMenu.classList.contains("active")
+          ? "hidden"
+          : "";
       });
 
-      document.querySelectorAll(".mobile-menu__link").forEach(link => {
+      document.querySelectorAll(".mobile-menu__link").forEach((link) => {
         link.addEventListener("click", () => {
           hamburger.classList.remove("active");
           mobileMenu.classList.remove("active");
@@ -796,10 +1260,15 @@
 
       // --- Scroll reveal ---
       const reveals = document.querySelectorAll(".reveal");
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
-      reveals.forEach(el => revealObserver.observe(el));
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+      );
+      reveals.forEach((el) => revealObserver.observe(el));
     </script>
   </body>
 </html>

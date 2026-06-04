@@ -11,6 +11,32 @@
       rel="stylesheet"
     />
     <style>
+      /* ========== FONT FACE ========== */
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3cond.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3condital.ttf")
+          format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+
       /* ========== CSS VARIABLES ========== */
       :root {
         --color-cotton: #f5f0eb;
@@ -19,7 +45,7 @@
         --color-black: #0a0a0a;
         --color-white: #ffffff;
 
-        --font-heading: "Space Grotesk", sans-serif;
+        --font-heading: "911 Porscha", "Space Grotesk", sans-serif;
         --font-body: "Inter", sans-serif;
 
         --nav-height: 72px;
@@ -65,7 +91,7 @@
         font-family: var(--font-heading);
         font-weight: 300;
         text-transform: uppercase;
-        letter-spacing: 0.02em;
+        letter-spacing: -0.02em;
         line-height: 1.1;
       }
 
@@ -81,8 +107,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 40px;
-        background: var(--color-white);
-        border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+        background: var(--color-black);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .navbar__logo img {
@@ -105,7 +131,7 @@
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         padding: 8px 0;
       }
@@ -125,7 +151,7 @@
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         padding: 8px 0;
         cursor: pointer;
@@ -155,13 +181,15 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--color-white);
-        border-top: 1px solid rgba(10, 10, 10, 0.08);
+        background: var(--color-black);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         padding: 32px 40px;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        box-shadow: 0 12px 32px rgba(10, 10, 10, 0.06);
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         display: flex;
         gap: 40px;
       }
@@ -186,7 +214,7 @@
         font-weight: 400;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(10, 10, 10, 0.35);
+        color: rgba(255, 255, 255, 0.35);
         cursor: pointer;
         transition: color 0.2s ease;
         padding: 4px 0;
@@ -194,14 +222,14 @@
 
       .navbar__dropdown-list-item:hover,
       .navbar__dropdown-list-item.active {
-        color: var(--color-black);
+        color: var(--color-white);
       }
 
       /* Build cards with images */
       .navbar__dropdown-cards {
         display: flex;
         gap: 32px;
-        flex: 1;
+        margin-left: auto;
       }
 
       .navbar__dropdown-card {
@@ -214,7 +242,7 @@
       .navbar__dropdown-card-img {
         width: 260px;
         height: 160px;
-        background: #eae6e1;
+        background: #1a1a1a;
         border-radius: 8px;
         overflow: hidden;
         display: flex;
@@ -239,7 +267,7 @@
         font-weight: 500;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: var(--color-black);
+        color: var(--color-white);
       }
 
       .navbar__dropdown-card-link {
@@ -272,7 +300,7 @@
       }
 
       .navbar__icon {
-        color: var(--color-black);
+        color: var(--color-white);
         transition: color 0.3s ease;
         display: flex;
         align-items: center;
@@ -301,13 +329,21 @@
         display: block;
         width: 100%;
         height: 2px;
-        background: var(--color-black);
-        transition: transform 0.4s ease, opacity 0.3s ease;
+        background: var(--color-white);
+        transition:
+          transform 0.4s ease,
+          opacity 0.3s ease;
       }
 
-      .navbar__hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .navbar__hamburger.active span:nth-child(2) { opacity: 0; }
-      .navbar__hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      .navbar__hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .navbar__hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar__hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
 
       /* Mobile menu */
       .mobile-menu {
@@ -464,8 +500,6 @@
         display: flex;
         min-height: 200vh;
         position: relative;
-        max-width: 1400px;
-        margin: 0 auto;
         padding: 0 40px;
       }
 
@@ -479,7 +513,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 60px 60px 60px 0;
+        padding: 80px 60px 80px 0;
         z-index: 2;
       }
 
@@ -619,7 +653,9 @@
         padding: 14px 28px;
         border: none;
         cursor: pointer;
-        transition: background 0.3s ease, color 0.3s ease;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
         background: transparent;
         color: rgba(10, 10, 10, 0.4);
         text-align: left;
@@ -719,7 +755,9 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        transition: color 0.3s ease, gap 0.3s ease;
+        transition:
+          color 0.3s ease,
+          gap 0.3s ease;
       }
 
       .builds__info-link:hover {
@@ -838,7 +876,9 @@
         border-radius: 8px;
         padding: 12px 14px;
         outline: none;
-        transition: border-color 0.3s ease, background 0.3s ease;
+        transition:
+          border-color 0.3s ease,
+          background 0.3s ease;
       }
 
       .footer__form-input::placeholder,
@@ -869,7 +909,9 @@
         border-radius: 8px;
         padding: 14px 32px;
         cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
         align-self: flex-start;
         margin-top: 4px;
       }
@@ -1095,7 +1137,6 @@
           flex-direction: column;
           gap: 24px;
         }
-
       }
     </style>
   </head>
@@ -1109,32 +1150,63 @@
         <li class="navbar__dropdown">
           <button class="navbar__dropdown-trigger">
             Builds
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </button>
           <div class="navbar__dropdown-menu">
             <div class="navbar__dropdown-list">
-              <a href="p001.html" class="navbar__dropdown-list-item active">P001</a>
-              <a href="p002.html" class="navbar__dropdown-list-item">P002</a>
+              <a href="p001.html" class="navbar__dropdown-list-item active"
+                >P-001</a
+              >
+              <a href="p002.html" class="navbar__dropdown-list-item">P-002</a>
             </div>
             <div class="navbar__dropdown-cards">
               <a href="p001.html" class="navbar__dropdown-card">
                 <div class="navbar__dropdown-card-img">
-                  <img src="assets/993RS.png" alt="993 RS">
+                  <img src="assets/993RS.png" alt="993 RS" />
                 </div>
-                <span class="navbar__dropdown-card-name">P001 — 993 RS</span>
+                <span class="navbar__dropdown-card-name">P-001 — 993 RS</span>
                 <span class="navbar__dropdown-card-link">
                   See More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </span>
               </a>
               <a href="p002.html" class="navbar__dropdown-card">
                 <div class="navbar__dropdown-card-img">
-                  <img src="assets/901Wasabi.png" alt="901 R">
+                  <img src="assets/901Wasabi.png" alt="901 R" />
                 </div>
-                <span class="navbar__dropdown-card-name">P002 — 901 R</span>
+                <span class="navbar__dropdown-card-name">P-002 — 901 R</span>
                 <span class="navbar__dropdown-card-link">
                   See More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </span>
               </a>
             </div>
@@ -1145,7 +1217,18 @@
       </ul>
       <div class="navbar__actions">
         <a href="#" class="navbar__icon" aria-label="Cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
         </a>
       </div>
       <div class="navbar__hamburger" id="hamburger">
@@ -1158,8 +1241,8 @@
       <a href="#" class="mobile-menu__link">Home</a>
       <a href="#builds" class="mobile-menu__link">Builds</a>
       <div class="mobile-menu__sub">
-        <a href="p001.html">P001 — 993 RS</a>
-        <a href="p002.html">P002 — 901 R</a>
+        <a href="p001.html">P-001 — 993 RS</a>
+        <a href="p002.html">P-002 — 901 R</a>
       </div>
       <a href="store.html" class="mobile-menu__link">Store</a>
       <a href="#footer" class="mobile-menu__link">Contact</a>
@@ -1175,7 +1258,6 @@
       <div class="hero__content">
         <p class="hero__subtitle">911 &bull; 964 &bull; 993</p>
         <h1 class="hero__title">Revisioning<br />Icons</h1>
-
       </div>
     </section>
 
@@ -1238,45 +1320,83 @@
     <section class="builds" id="builds">
       <div class="builds__left reveal">
         <p class="builds__label">Featured Builds</p>
-        <h2 class="builds__title">Our<br>Projects</h2>
+        <h2 class="builds__title">Our<br />Projects</h2>
         <div class="builds__toggle">
-          <button class="builds__toggle-btn active" data-car="p001">993 RS</button>
+          <button class="builds__toggle-btn active" data-car="p001">
+            993 RS
+          </button>
           <button class="builds__toggle-btn" data-car="p002">901 R</button>
         </div>
       </div>
 
       <div class="builds__right">
-        <!-- P001 -->
+        <!-- P-001 -->
         <div class="builds__car active" id="car-p001">
-          <img src="assets/993RS.png" alt="993 RS - Black Widow" class="builds__car-image">
+          <img
+            src="assets/993RS.png"
+            alt="993 RS - Black Widow"
+            class="builds__car-image"
+          />
           <div class="builds__info">
             <div class="builds__info-meta">
-              <p class="builds__info-name">P001</p>
-              <h3 class="builds__info-title">993 RS<br>Black Widow</h3>
+              <p class="builds__info-name">P-001</p>
+              <h3 class="builds__info-title">993 RS<br />Black Widow</h3>
             </div>
             <div class="builds__info-body">
-              <p class="builds__info-desc">1997 Porsche 911 (993) &bull; 3.6L H6. Revisioned through our perspective, integrating today's advanced engineering while maintaining the timeless allure of its classic design.</p>
+              <p class="builds__info-desc">
+                1997 Porsche 911 (993) &bull; 3.6L H6. Revisioned through our
+                perspective, integrating today's advanced engineering while
+                maintaining the timeless allure of its classic design.
+              </p>
               <a href="p001.html" class="builds__info-link">
                 Learn More
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- P002 -->
+        <!-- P-002 -->
         <div class="builds__car" id="car-p002">
-          <img src="assets/901Wasabi.png" alt="901 R" class="builds__car-image">
+          <img
+            src="assets/901Wasabi.png"
+            alt="901 R"
+            class="builds__car-image"
+          />
           <div class="builds__info">
             <div class="builds__info-meta">
-              <p class="builds__info-name">P002</p>
+              <p class="builds__info-name">P-002</p>
               <h3 class="builds__info-title">901 R</h3>
             </div>
             <div class="builds__info-body">
-              <p class="builds__info-desc">1970 Porsche 911 (F-Body) &bull; 2.2L H6. A bold reinterpretation that pushes the boundaries of classic 911 restoration with modern performance and unmistakable presence.</p>
+              <p class="builds__info-desc">
+                1970 Porsche 911 (F-Body) &bull; 2.2L H6. A bold
+                reinterpretation that pushes the boundaries of classic 911
+                restoration with modern performance and unmistakable presence.
+              </p>
               <a href="p002.html" class="builds__info-link">
                 Learn More
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
@@ -1290,33 +1410,66 @@
         <div class="footer__top">
           <div class="footer__top-left">
             <div class="footer__logo-large">
-              <img src="assets/SMG-Logo.png" alt="SMG Werks">
+              <img src="assets/SMG-Logo.png" alt="SMG Werks" />
             </div>
             <p class="footer__tagline">Excellence since 1956</p>
-            <h2 class="footer__headline">Schedule a<br>Consultation.</h2>
-            <p class="footer__desc">Feel free to reach out to secure a build slot at SMG Werks. Tell us about your car and we'll get back to you.</p>
+            <h2 class="footer__headline">Schedule a<br />Consultation.</h2>
+            <p class="footer__desc">
+              Feel free to reach out to secure a build slot at SMG Werks. Tell
+              us about your car and we'll get back to you.
+            </p>
           </div>
           <div class="footer__top-right">
-            <form class="footer__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form
+              class="footer__form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
               <div class="footer__form-group">
                 <label class="footer__form-label" for="email">Email</label>
-                <input class="footer__form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+                <input
+                  class="footer__form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
               </div>
               <div class="footer__form-row">
                 <div class="footer__form-group">
                   <label class="footer__form-label" for="year">Year</label>
-                  <input class="footer__form-input" type="text" id="year" name="year" placeholder="1993">
+                  <input
+                    class="footer__form-input"
+                    type="text"
+                    id="year"
+                    name="year"
+                    placeholder="1993"
+                  />
                 </div>
                 <div class="footer__form-group">
                   <label class="footer__form-label" for="model">Model</label>
-                  <input class="footer__form-input" type="text" id="model" name="model" placeholder="993 Carrera">
+                  <input
+                    class="footer__form-input"
+                    type="text"
+                    id="model"
+                    name="model"
+                    placeholder="993 Carrera"
+                  />
                 </div>
               </div>
               <div class="footer__form-group">
                 <label class="footer__form-label" for="message">Message</label>
-                <textarea class="footer__form-textarea" id="message" name="message" placeholder="Tell us about your project..."></textarea>
+                <textarea
+                  class="footer__form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project..."
+                ></textarea>
               </div>
-              <button type="submit" class="footer__form-submit">Send Inquiry</button>
+              <button type="submit" class="footer__form-submit">
+                Send Inquiry
+              </button>
             </form>
           </div>
         </div>
@@ -1341,8 +1494,18 @@
           </div>
           <div class="footer__nav-col">
             <p class="footer__nav-title">Social</p>
-            <a href="https://www.facebook.com/smgwerks/" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/smgwerks/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a
+              href="https://www.facebook.com/smgwerks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/smgwerks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
           </div>
           <div class="footer__nav-col">
             <p class="footer__nav-title">Contact</p>
@@ -1356,8 +1519,20 @@
           </div>
         </div>
         <div class="footer__disclaimer-row">
-          <p class="footer__disclaimer">SMG Werks is not affiliated with, endorsed by, or sponsored by Dr. Ing. h.c. F. Porsche AG or any of its subsidiaries. Porsche is a registered trademark of Dr. Ing. h.c. F. Porsche AG.</p>
-          <p class="footer__credit">Designed by <a href="https://khoiqnguyen.com" target="_blank" rel="noopener noreferrer">Khoi Nguyen</a></p>
+          <p class="footer__disclaimer">
+            SMG Werks is not affiliated with, endorsed by, or sponsored by Dr.
+            Ing. h.c. F. Porsche AG or any of its subsidiaries. Porsche is a
+            registered trademark of Dr. Ing. h.c. F. Porsche AG.
+          </p>
+          <p class="footer__credit">
+            Designed by
+            <a
+              href="https://khoiqnguyen.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Khoi Nguyen</a
+            >
+          </p>
         </div>
       </div>
     </footer>
@@ -1371,10 +1546,12 @@
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         mobileMenu.classList.toggle("active");
-        document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+        document.body.style.overflow = mobileMenu.classList.contains("active")
+          ? "hidden"
+          : "";
       });
 
-      document.querySelectorAll(".mobile-menu__link").forEach(link => {
+      document.querySelectorAll(".mobile-menu__link").forEach((link) => {
         link.addEventListener("click", () => {
           hamburger.classList.remove("active");
           mobileMenu.classList.remove("active");
