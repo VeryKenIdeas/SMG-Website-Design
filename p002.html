@@ -635,66 +635,126 @@
         color: rgba(10, 10, 10, 0.2);
       }
 
-      /* ========== SPEC SHEET ========== */
-      .spec-sheet {
-        padding: 100px 40px;
+      /* ========== SPEC MAP ========== */
+      .spec-map {
+        padding: 100px 40px 80px;
         background: var(--color-white);
         border-top: 1px solid rgba(10, 10, 10, 0.06);
       }
 
-      .spec-sheet__inner {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .spec-sheet__header {
+      .spec-map__header {
+        text-align: center;
         margin-bottom: 60px;
       }
 
-      .spec-sheet__label {
-        font-family: var(--font-heading);
-        font-size: 0.7rem;
-        font-weight: 500;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        color: var(--color-red);
-        margin-bottom: 16px;
-      }
-
-      .spec-sheet__title {
+      .spec-map__title {
         font-size: clamp(2rem, 4vw, 3rem);
         color: var(--color-black);
+        margin-bottom: 24px;
       }
 
-      .spec-sheet__grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0 60px;
-      }
-
-      .spec-sheet__row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding: 16px 0;
-        border-bottom: 1px solid rgba(10, 10, 10, 0.08);
-        gap: 24px;
-      }
-
-      .spec-sheet__row-label {
+      .spec-map__cta {
+        display: inline-block;
         font-family: var(--font-heading);
         font-size: 0.7rem;
         font-weight: 500;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: rgba(10, 10, 10, 0.4);
+        color: var(--color-black);
+        border: 1.5px solid var(--color-black);
+        border-radius: 6px;
+        padding: 12px 28px;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
       }
 
-      .spec-sheet__row-value {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-        color: var(--color-black);
+      .spec-map__cta:hover {
+        background: var(--color-black);
+        color: var(--color-white);
+      }
+
+      .spec-map__body {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 20px 40px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .spec-map__col--left {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-self: end;
         text-align: right;
+      }
+
+      .spec-map__col--left .spec-map__item {
+        align-items: flex-end;
+      }
+
+      .spec-map__image-wrap {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .spec-map__image-wrap img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+      }
+
+      .spec-map__col--right {
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-self: start;
+      }
+
+      .spec-map__bottom {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        padding-top: 20px;
+      }
+
+      .spec-map__bottom .spec-map__item {
+        align-items: center;
+        text-align: center;
+      }
+
+      .spec-map__item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .spec-map__label {
+        font-family: var(--font-heading);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-red);
+      }
+
+      .spec-map__value {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: rgba(10, 10, 10, 0.6);
+        line-height: 1.4;
       }
 
       /* ========== BACK LINK ========== */
@@ -963,8 +1023,36 @@
         .interior-gallery__item--wide {
           grid-column: span 2;
         }
-        .spec-sheet__grid {
+        .spec-map__body {
           grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+
+        .spec-map__col--left,
+        .spec-map__col--right {
+          grid-column: 1;
+          grid-row: auto;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-self: center;
+          text-align: center;
+          gap: 24px 40px;
+        }
+
+        .spec-map__col--left .spec-map__item {
+          align-items: center;
+        }
+
+        .spec-map__image-wrap {
+          grid-column: 1;
+          grid-row: auto;
+          order: -1;
+        }
+
+        .spec-map__bottom {
+          grid-column: 1;
+          flex-wrap: wrap;
+          gap: 24px 40px;
         }
         .footer__top {
           flex-direction: column;
@@ -1011,8 +1099,11 @@
           grid-column: span 1;
           aspect-ratio: 1;
         }
-        .spec-sheet {
+        .spec-map {
           padding: 60px 24px;
+        }
+        .spec-map__bottom {
+          gap: 20px 32px;
         }
         .footer {
           padding: 40px 24px 24px;
@@ -1238,41 +1329,71 @@
       <div class="interior-gallery__item"><span>Detail 6</span></div>
     </div>
 
-    <!-- ========== SPEC SHEET ========== -->
-    <section class="spec-sheet">
-      <div class="spec-sheet__inner">
-        <div class="spec-sheet__header reveal">
-          <p class="spec-sheet__label">Specifications</p>
-          <h2 class="spec-sheet__title">901 R<br />Build Spec</h2>
-        </div>
-        <div class="spec-sheet__grid reveal">
-          <div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Year</span>
-              <span class="spec-sheet__row-value">1970</span>
-            </div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Model</span>
-              <span class="spec-sheet__row-value">Porsche 911 (F-Body)</span>
-            </div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Engine</span>
-              <span class="spec-sheet__row-value">2.2L Flat-Six</span>
-            </div>
+    <!-- ========== SPEC MAP ========== -->
+    <section class="spec-map">
+      <div class="spec-map__header reveal">
+        <h2 class="spec-map__title">Want to know more?</h2>
+        <a href="#footer" class="spec-map__cta">Ask for a Quote</a>
+      </div>
+      <div class="spec-map__body reveal">
+        <!-- Left column specs -->
+        <div class="spec-map__col spec-map__col--left">
+          <div class="spec-map__item">
+            <span class="spec-map__label">Model</span>
+            <span class="spec-map__value">1970 Porsche 911 (901)</span>
           </div>
-          <div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Aspiration</span>
-              <span class="spec-sheet__row-value">Naturally Aspirated</span>
-            </div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Cooling</span>
-              <span class="spec-sheet__row-value">Air-Cooled</span>
-            </div>
-            <div class="spec-sheet__row">
-              <span class="spec-sheet__row-label">Transmission</span>
-              <span class="spec-sheet__row-value">Manual</span>
-            </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Engine</span>
+            <span class="spec-map__value">2.2L Flat-Six<br />Air-Cooled</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Aspiration</span>
+            <span class="spec-map__value">Naturally Aspirated</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Finish</span>
+            <span class="spec-map__value">Signature Wasabi</span>
+          </div>
+        </div>
+
+        <!-- Center image -->
+        <div class="spec-map__image-wrap">
+          <img src="assets/P002-Map.png" alt="P-002 901 R Specification Map" />
+        </div>
+
+        <!-- Right column specs -->
+        <div class="spec-map__col spec-map__col--right">
+          <div class="spec-map__item">
+            <span class="spec-map__label">Transmission</span>
+            <span class="spec-map__value">5-Speed Manual</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Drivetrain</span>
+            <span class="spec-map__value">Rear-Wheel Drive</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Wheels</span>
+            <span class="spec-map__value">Period-Correct Fuchs</span>
+          </div>
+        </div>
+
+        <!-- Bottom row specs -->
+        <div class="spec-map__bottom">
+          <div class="spec-map__item">
+            <span class="spec-map__label">Body</span>
+            <span class="spec-map__value">F-Body Restoration</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Heritage</span>
+            <span class="spec-map__value">Air-Cooled Original</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Interior</span>
+            <span class="spec-map__value">Bespoke Appointments</span>
+          </div>
+          <div class="spec-map__item">
+            <span class="spec-map__label">Build</span>
+            <span class="spec-map__value">SMG Werks 901 R</span>
           </div>
         </div>
       </div>
