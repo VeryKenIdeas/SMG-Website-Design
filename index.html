@@ -13,27 +13,26 @@
     <style>
       /* ========== FONT FACE ========== */
       @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3cond.ttf") format("truetype");
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-regular.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
 
       @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3bold.ttf") format("truetype");
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-semibold.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3condital.ttf")
-          format("truetype");
-        font-weight: 400;
-        font-style: italic;
         font-display: swap;
       }
 
@@ -45,7 +44,7 @@
         --color-black: #0a0a0a;
         --color-white: #ffffff;
 
-        --font-heading: "911 Porscha", "Space Grotesk", sans-serif;
+        --font-heading: "Porsche Next", "Space Grotesk", sans-serif;
         --font-body: "Inter", sans-serif;
 
         --nav-height: 72px;
@@ -572,6 +571,14 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.2);
+      }
+
+      .hero__video-placeholder img,
+      .about__parallax-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       .about__parallax-img--1 {
@@ -1144,7 +1151,7 @@
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
       <a href="#" class="navbar__logo">
-        <img src="assets/SMG-Logo.png" alt="SMG Werks" />
+        <img src="assets/SMG-Logo-white.png" alt="SMG Werks" />
       </a>
       <ul class="navbar__links">
         <li class="navbar__dropdown">
@@ -1252,7 +1259,7 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
       <div class="hero__video-placeholder">
-        <span>Video Placeholder</span>
+        <img src="assets/builds/home-hero.jpg" alt="SMG Werks 901 R" />
       </div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
@@ -1292,25 +1299,25 @@
             class="about__parallax-img about__parallax-img--1"
             data-speed="0.15"
           >
-            <span>Interior Detail</span>
+            <img src="assets/builds/p002-g-dash.jpg" alt="Interior detail" />
           </div>
           <div
             class="about__parallax-img about__parallax-img--2"
             data-speed="-0.1"
           >
-            <span>Engine Bay</span>
+            <img src="assets/builds/p002-engine.jpg" alt="Engine bay" />
           </div>
           <div
             class="about__parallax-img about__parallax-img--3"
             data-speed="0.2"
           >
-            <span>Side Profile</span>
+            <img src="assets/builds/p002-g-profile.jpg" alt="Side profile" />
           </div>
           <div
             class="about__parallax-img about__parallax-img--4"
             data-speed="-0.15"
           >
-            <span>Wheel Detail</span>
+            <img src="assets/builds/p001-wheels.jpg" alt="Wheel detail" />
           </div>
         </div>
       </div>

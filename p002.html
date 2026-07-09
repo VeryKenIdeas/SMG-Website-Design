@@ -12,27 +12,26 @@
     />
     <style>
       @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3cond.ttf") format("truetype");
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-regular.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
 
       @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3bold.ttf") format("truetype");
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-semibold.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Porsche Next";
+        src: url("assets/fonts/porsche-next-bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "911 Porscha";
-        src: url("assets/911porscha/911porschav3condital.ttf")
-          format("truetype");
-        font-weight: 400;
-        font-style: italic;
         font-display: swap;
       }
 
@@ -42,7 +41,7 @@
         --color-maroon: #5c1a1b;
         --color-black: #0a0a0a;
         --color-white: #ffffff;
-        --font-heading: "911 Porscha", "Space Grotesk", sans-serif;
+        --font-heading: "Porsche Next", "Space Grotesk", sans-serif;
         --font-body: "Inter", sans-serif;
         --nav-height: 72px;
         --border-radius: 12px;
@@ -542,7 +541,7 @@
       /* ========== DETAIL SECTIONS ========== */
       .detail {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         padding: 80px 40px;
         background: var(--color-white);
         gap: 40px;
@@ -633,6 +632,23 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: rgba(10, 10, 10, 0.2);
+      }
+
+      .hero__image-placeholder img,
+      .detail__image img,
+      .interior-gallery__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .detail__image {
+        position: relative;
+      }
+      .detail__image img {
+        position: absolute;
+        inset: 0;
       }
 
       /* ========== SPEC MAP ========== */
@@ -1127,7 +1143,7 @@
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
       <a href="index.html" class="navbar__logo">
-        <img src="assets/SMG-Logo.png" alt="SMG Werks" />
+        <img src="assets/SMG-Logo-white.png" alt="SMG Werks" />
       </a>
       <ul class="navbar__links">
         <li class="navbar__dropdown">
@@ -1235,7 +1251,7 @@
     <!-- ========== HERO ========== -->
     <section class="hero">
       <div class="hero__image-placeholder">
-        <span>901 R Hero Photo</span>
+        <img src="assets/builds/p002-hero.jpg" alt="901 R front three-quarter" />
       </div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
@@ -1268,7 +1284,7 @@
     <!-- ========== OVERVIEW ========== -->
     <section class="detail">
       <div class="detail__image">
-        <span>901 R Detail Photo</span>
+        <img src="assets/builds/p002-overview.jpg" alt="901 R side profile" />
       </div>
       <div class="detail__content reveal">
         <p class="detail__label">Overview</p>
@@ -1285,7 +1301,7 @@
     <!-- ========== DETAIL 2 ========== -->
     <section class="detail detail--reverse">
       <div class="detail__image">
-        <span>Engine Photo</span>
+        <img src="assets/builds/p002-engine.jpg" alt="901 R 2.2L flat-six engine" />
       </div>
       <div class="detail__content reveal">
         <p class="detail__label">Powertrain</p>
@@ -1302,7 +1318,7 @@
     <!-- ========== DETAIL 3 ========== -->
     <section class="detail">
       <div class="detail__image">
-        <span>Interior / Detail Photo</span>
+        <img src="assets/builds/p002-design.jpg" alt="901 R front three-quarter stance" />
       </div>
       <div class="detail__content reveal">
         <p class="detail__label">Design</p>
@@ -1318,15 +1334,27 @@
 
     <!-- ========== GALLERY ========== -->
     <div class="interior-gallery">
-      <div class="interior-gallery__item"><span>Detail 1</span></div>
-      <div class="interior-gallery__item"><span>Detail 2</span></div>
-      <div class="interior-gallery__item"><span>Detail 3</span></div>
-      <div class="interior-gallery__item"><span>Detail 4</span></div>
-      <div class="interior-gallery__item interior-gallery__item--wide">
-        <span>Wide Shot</span>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-wheel.jpg" alt="Wasabi Fuchs wheel" />
       </div>
-      <div class="interior-gallery__item"><span>Detail 5</span></div>
-      <div class="interior-gallery__item"><span>Detail 6</span></div>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-exhaust.jpg" alt="Exhaust tips" />
+      </div>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-badge.jpg" alt="SMG R badge" />
+      </div>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-dash.jpg" alt="Dashboard and gauges" />
+      </div>
+      <div class="interior-gallery__item interior-gallery__item--wide">
+        <img src="assets/builds/p002-g-profile.jpg" alt="901 R side profile" />
+      </div>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-sill.jpg" alt="Wasabi door sill plate" />
+      </div>
+      <div class="interior-gallery__item">
+        <img src="assets/builds/p002-g-gauges.jpg" alt="SMG tachometer" />
+      </div>
     </div>
 
     <!-- ========== SPEC MAP ========== -->
