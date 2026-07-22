@@ -13,8 +13,8 @@
     <style>
       /* ========== FONT FACE ========== */
       @font-face {
-        font-family: "Yapari Trial";
-        src: url("assets/fonts/yapari/YapariTrial-ExtraBoldExtended.ttf") format("truetype");
+        font-family: "911 Porscha";
+        src: url("assets/911porscha/911porschav3title.ttf") format("truetype");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -52,7 +52,7 @@
         --color-black: #0a0a0a;
         --color-white: #ffffff;
 
-        --font-heading: "Yapari Trial", "Space Grotesk", sans-serif;
+        --font-heading: "911 Porscha", "Space Grotesk", sans-serif;
         --font-body: "Inter", sans-serif;
 
         --nav-height: 72px;
@@ -100,6 +100,10 @@
         text-transform: uppercase;
         letter-spacing: -0.02em;
         line-height: 1.1;
+      }
+
+      .force-lowercase {
+        text-transform: lowercase !important;
       }
 
       /* ========== NAVBAR ========== */
@@ -1154,6 +1158,30 @@
         }
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+        const forbidden = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "CODE", "PRE"]);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (!node.parentNode || forbidden.has(node.parentNode.nodeName)) continue;
+          const text = node.nodeValue;
+          if (!/[iIxX]/.test(text)) continue;
+          const fragment = document.createDocumentFragment();
+          for (const char of text) {
+            if (char === "i" || char === "I" || char === "x" || char === "X") {
+              const span = document.createElement("span");
+              span.className = "force-lowercase";
+              span.textContent = char.toLowerCase();
+              fragment.appendChild(span);
+            } else {
+              fragment.appendChild(document.createTextNode(char));
+            }
+          }
+          node.parentNode.replaceChild(fragment, node);
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- ========== NAVBAR ========== -->
