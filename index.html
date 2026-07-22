@@ -97,14 +97,9 @@
       h4 {
         font-family: var(--font-heading);
         font-weight: 700;
-        text-transform: uppercase;
+        text-transform: none;
         letter-spacing: -0.02em;
         line-height: 1.1;
-      }
-
-      .force-lowercase {
-        text-transform: lowercase !important;
-        letter-spacing: normal !important;
       }
 
       /* ========== NAVBAR ========== */
@@ -1161,26 +1156,30 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-        const forbidden = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "CODE", "PRE"]);
-        let node;
-        while ((node = walker.nextNode())) {
-          if (!node.parentNode || forbidden.has(node.parentNode.nodeName)) continue;
-          const text = node.nodeValue;
-          if (!/[iIxX]/.test(text)) continue;
-          const fragment = document.createDocumentFragment();
-          for (const char of text) {
-            if (char === "i" || char === "I" || char === "x" || char === "X") {
-              const span = document.createElement("span");
-              span.className = "force-lowercase";
-              span.textContent = char.toLowerCase();
-              fragment.appendChild(span);
-            } else {
-              fragment.appendChild(document.createTextNode(char));
+        const headings = document.querySelectorAll("h1, h2, h3, h4");
+
+        const transformText = (text) =>
+          text.replace(/[A-Za-z]/g, (ch) => {
+            if (ch === "i" || ch === "I" || ch === "x" || ch === "X") {
+              return ch.toLowerCase();
             }
-          }
-          node.parentNode.replaceChild(fragment, node);
-        }
+            return ch.toUpperCase();
+          });
+
+        const walk = (node) => {
+          node.childNodes.forEach((child) => {
+            if (child.nodeType === Node.TEXT_NODE) {
+              child.nodeValue = transformText(child.nodeValue);
+            } else if (child.nodeType === Node.ELEMENT_NODE) {
+              walk(child);
+            }
+          });
+        };
+
+        headings.forEach((heading) => {
+          heading.style.textTransform = "none";
+          walk(heading);
+        });
       });
     </script>
   </head>
